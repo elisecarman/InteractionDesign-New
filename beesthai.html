@@ -94,6 +94,35 @@
         color: #A94112;
       }
 
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        z-index: 500;
+      }
+
+      .tooltip-text {
+        z-index: 500;
+        visibility: hidden;
+        width: 140px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        position: absolute;
+        bottom: 125%; /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltip-text {
+          visibility: visible;
+          opacity: 1;
+        }
+
       /* .menu-nav{
         top: 65px;
         display: flex;
@@ -662,8 +691,13 @@
                 </div>
               </div>
               <div class="section-item-icons">
-                <img class="icon" src="public/gluten.png"/>
-                <img class="icon" src="public/vegan.png"/>
+                <!-- <img class="icon" src="public/gluten.png" title="Gluten free"/> -->
+
+                <div class="tooltip">
+                  <img class="icon" src="public/gluten.png" title="Gluten free"/>
+                  <span class="tooltiptext">Gluten free</span>
+                </div>
+                <!-- <img class="icon" src="public/vegan.png" title="Vegan"/> -->
                 
               </div>
             </div>
